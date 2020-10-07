@@ -8,6 +8,10 @@ public:
     Unit();
     ~Unit();
 
+    void PrintStatus();
+
+private:
+
     int m_hp;
     int m_str;
     int m_mag;
