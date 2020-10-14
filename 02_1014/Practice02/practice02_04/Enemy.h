@@ -1,12 +1,12 @@
 
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef ENEMY_H
+#define ENEMY_H
 
-class Player
+class Enemy
 {
 public:
-	Player();
-	~Player();
+	Enemy();
+	~Enemy();
 
 public:
 	void Exec();
@@ -29,5 +29,5 @@ private:
 	float m_MoveSpeed;
 };
 
-#endif // !PLAYER_H
+#endif // !ENEMY_H
 

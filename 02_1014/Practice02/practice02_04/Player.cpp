@@ -23,18 +23,18 @@ void Player::Draw()
 {
 }
 
-void Player::SetHp(int hp)
+void Player::GetHp(int hp)
 {
 	hp = m_Hp;
 }
 
-void Player::SetPos(float x, float y)
+void Player::GetPos(float x, float y)
 {
 	x = m_PosX;
 	y = m_PosY;
 }
 
-void Player::SetMoveSpeed(float speed)
+void Player::GetMoveSpeed(float speed)
 {
 	speed = m_MoveSpeed;
 }
@@ -49,12 +49,12 @@ float Player::GetPosX()
 	return m_PosX;
 }
 
-float Player::GetPosy()
+float Player::GetPosY()
 {
 	return m_PosY;
 }
 
-float Player::GetmoveSpeed()
+float Player::GetMoveSpeed()
 {
 	return m_MoveSpeed;
 }
