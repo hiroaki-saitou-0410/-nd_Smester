@@ -7,13 +7,19 @@ class Base
 {
 public:
 	Base();
-	virtual ~Base();
+	~Base();//デストラクターには「必ず」virtualをつける
+
+public:
+	//継承先で、それぞれ処理の違うことが分かっている関数を
+	//純粋仮想関数の
+	virtual void Exec() = 0;
+	virtual void Draw() = 0;
 
 public:
 	//引数の矩形情報と、自分が当たっているか判断
 	//関数宣言の前にvirtualをつけると、それは仮想関数になる
 	virtual bool CheckHit(int x, int y, int wifth, int height);
-
+	
 
 	void SetHp(int hp);
 	void SetPos(float x, float y);

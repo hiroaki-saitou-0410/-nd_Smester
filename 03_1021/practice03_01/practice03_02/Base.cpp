@@ -10,11 +10,13 @@ Base::Base()
 
 	m_Wifth = 10;
 	m_Height = 10;
+
+	printf("Base:コンストラクタ\n");
 }
 
 Base::~Base()
 {
-
+	printf("Base:デストラクター\n");
 }
 
 //引数の矩形情報と、自分が当たっているか判断
