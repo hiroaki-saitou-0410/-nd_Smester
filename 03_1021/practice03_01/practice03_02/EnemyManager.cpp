@@ -40,21 +40,76 @@ Base* EnemyManager::CreateEnemy(int enemy_type)
 	return ptr;
 }
 
-bool EnemyManager::DestoryEnemy(Base* ptr)
+//エネミーを削除
+bool EnemyManager::DestoryEnemy(class Base* ptr)
 {
+	//ptrがnullptrだったら即リターン
+	if (ptr == nullptr)
+	{
+		return false;
+	}
+	for (std::vector<Base*>::iterator itr = m_Enemies.begin();
+		itr != m_Enemies.end();
+		++itr)
+	{
+		//可変長配列にptrと同じアドレスを持つものがあれば削除
+		Base* tmp = *itr;
+		if (tmp == ptr)
+		{
+			delete* itr;
+			*itr = nullptr;
+			return true;
+
+		}
+	}
 	return false;
 }
 
 void EnemyManager::Exec()
 {
+	for (std::vector<Base*>::iterator itr = m_Enemies.begin();
+		itr != m_Enemies.end();
+		++itr)
+	{
+		if (*itr != nullptr)
+		{
+			Base* ptr = *itr;
+			ptr->Exec();
+		}
+	}
 }
 
 void EnemyManager::Draw()
 {
+	for (std::vector<Base*>::iterator itr = m_Enemies.begin();
+		itr != m_Enemies.end();
+		++itr)
+	{
+		if (*itr != nullptr)
+		{
+			Base* ptr = *itr;
+			ptr->Draw();
+		}
+	}
 }
 
 Base* EnemyManager::CheckHit(int x, int y, int width, int height)
 {
+	for (std::vector<Base*>::iterator itr = m_Enemies.begin();
+		itr != m_Enemies.end();
+		++itr)
+	{
+		if (*itr != nullptr)
+		{
+			//当たっていたらあアドバイス
+			Base* ptr = *itr;
+			if (ptr->CheckHit(x, y, width, height))
+			{
+				return ptr;
+			}
+		}
+	}
+	//for分を
 	return nullptr;
 }
 
