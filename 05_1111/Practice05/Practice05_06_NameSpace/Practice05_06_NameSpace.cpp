@@ -9,7 +9,12 @@
 //書き方
 //using namespace　namespace名;
 using namespace Enemy; 
-
+/* using 注意点
+	usingはnamesoaceの所属情報を指定しなくいいので便利だが、名前の衝突問題が再燃してしまうので、使用しすぎない。
+	
+	なお、usingはヘッターファイルで使わないようにする
+	インクルードそた.cppすべてにusingの影響が出てしまうため、
+	namespaceを*/
 
 int main()
 {
