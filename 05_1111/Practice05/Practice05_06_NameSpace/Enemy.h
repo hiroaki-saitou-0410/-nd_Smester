@@ -11,6 +11,14 @@
 namespace Enemy
 {
     static const int Max = 10;		//敵の最大数
+
+    //namespaceに属しているデータを使う時の書き方()
+    //namespace名::は省略できる
+
+    void PrintMax()
+    {
+        printf("敵の最大数 = %d\n", Max);
+    }
 }
 
 #endif // !ENEMY_H

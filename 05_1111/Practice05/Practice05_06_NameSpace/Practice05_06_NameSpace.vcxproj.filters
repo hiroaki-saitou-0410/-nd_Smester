@@ -26,5 +26,8 @@
     <ClInclude Include="shot.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
