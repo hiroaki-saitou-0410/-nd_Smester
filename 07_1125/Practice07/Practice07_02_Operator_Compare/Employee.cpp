@@ -27,7 +27,7 @@ Employee::POST Employee::GetPost() const
 //オーバーロード
 bool Employee::operator > (const Employee& emp_) const
 {
-	if (m_Post > emp_.GetPost())
+	if (this->m_Post > emp_.GetPost())
 	{
 		return true;
 	}
